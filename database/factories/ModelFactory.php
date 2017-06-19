@@ -22,3 +22,15 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Game::class, function (Faker\Generator $faker) {
+    return [
+        'player1_name' => $faker->name,
+        'player2_name' => $faker->name,
+        'player1_pawn' => 'X',
+        'player2_pawn' => 'O',
+        'board'        => '{}',
+        'last_action'  => null,
+        'board_state'  => json_encode(['label' => "RUNNING"])
+    ];
+});
