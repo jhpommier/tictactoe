@@ -18,6 +18,13 @@ services:
       - "DB_USERNAME=tictactoe"
       - "DB_PASSWORD=tictactoe"
 
+  #composer
+  composer:
+    image: composer/composer
+    command: install
+    volumes:
+      - ./:/app
+
   # The Web Server
   web:
     build:
